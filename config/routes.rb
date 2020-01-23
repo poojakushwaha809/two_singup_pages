@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 		root  "homes#new"
 
 		get 'homes/home', to: 'homes#new'
-		get 'admins/admin', to: 'admins#new'
-		get 'students/new', to: 'students#new'
+		get 'admins/admin', to: 'admins#new', as: :admin_new
+		get 'students/new', to: 'students#new', as: :student_new
 
 
 
