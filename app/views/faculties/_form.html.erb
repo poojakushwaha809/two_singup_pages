@@ -1,0 +1,35 @@
+<%= link_to 'Welcome To Admin Page', admin_new_path %>
+
+<p></p>
+
+
+<%= form_for @faculty do |f| %>  
+
+
+  <p>
+    <%= f.label :Faculty_name %><br>
+    <%= f.text_field :faculty_name %>
+  </p>
+
+  <p>
+    <%= f.label :Contact %><br>
+    <%= f.text_field :contact %>
+  </p>
+ 
+ <p>
+    <%= f.label :Email %><br>
+    <%= f.text_field :email %>
+  </p>
+ 
+ 
+  
+  <p>
+    <%= f.submit %>
+  </p>
+  
+<% end %>
+
+
+
+
+<%= link_to 'faculties back', faculties_path %> |

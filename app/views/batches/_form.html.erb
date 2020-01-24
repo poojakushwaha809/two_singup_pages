@@ -1,0 +1,32 @@
+
+<%= link_to 'Welcome To Admin Page', admin_new_path %>
+<p></p>
+
+<%= form_for @batch do |f| %>  
+
+  <%= f.collection_select :faculty_id, Faculty.order(:faculty_name),:id,:faculty_name, include_blank: true %>
+
+  <p>
+    <%= f.label :Batch_name %><br>
+    <%= f.text_field :batch_name %>
+  </p>
+
+  <p>
+    <%= f.label :Batch_start_timing %><br>
+    <%= f.time_select :starting_time %>
+  </p>
+ 
+ <p>
+    <%= f.label :Batch_end_timing %><br>
+    <%= f.time_select :ending_time %>
+  </p>
+ 
+ 
+  
+  <p>
+    <%= f.submit %>
+  </p>
+  
+<% end %>
+
+    <%= link_to 'batches back', batches_path %> |

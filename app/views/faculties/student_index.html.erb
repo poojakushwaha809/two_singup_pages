@@ -1,0 +1,17 @@
+
+<h1>Listing faculties</h1>
+<table>
+  <tr>
+    <th>faculty name</th>
+        <th colspan="1"></th>
+
+  </tr>
+ 
+  <% @faculties.each do |faculty| %>
+    <tr>
+      <td><%= faculty.faculty_name %></td>
+      <td><%= link_to 'Show', faculty_path(faculty) %></td>
+     
+    </tr>
+  <% end %>
+</table>

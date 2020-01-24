@@ -7,15 +7,33 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <style>
+           
+           header
+        {background-color: midnightblue;
+        padding: 20px;
+        text-align: right;
+        font-size: 16px;
+        
+        }
+
+
+        body{color: black;
+          background-color: lightcyan}
+
+    
+
+         </style>
+
   </head>
 
   <body>
 
-    <%= render 'layouts/student' %> &nbsp;&nbsp;&nbsp;&nbsp;
+    <%= render 'layouts/header' %> &nbsp;&nbsp;&nbsp;&nbsp;
 
-    <%= render 'layouts/admin' %>
      <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+       <p class="alert" style="color: red;"><%= alert %></p>
 
     <%= yield %>
   </body>

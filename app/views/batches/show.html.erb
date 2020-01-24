@@ -1,0 +1,23 @@
+
+<p>
+	<strong>Faculty name</strong>
+	<%= @batch.faculty.faculty_name %>
+</p> 
+
+
+<p>
+	<strong>Batch name</strong>
+	<%= @batch.batch_name %>
+</p> 
+
+<p>
+	<strong>batch end timing</strong>
+	<%= @batch.starting_time.strftime("%H:%M") %>
+</p>
+
+<p>
+	<strong>batch start timing</strong>
+	<%= @batch.ending_time.strftime("%H:%M") %>
+</p>
+
+

@@ -1,0 +1,16 @@
+<h1>Listing batches</h1>
+<table>
+  <tr>
+    <th>batch name</th>
+        <th colspan="1"></th>
+
+  </tr>
+ 
+  <% @batches.each do |batch| %>
+    <tr>
+      <td><%= batch.batch_name %></td>
+      <td><%= link_to 'Show', batch_path(batch) %></td>
+      
+    </tr>
+  <% end %>
+</table>

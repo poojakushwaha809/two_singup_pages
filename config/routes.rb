@@ -4,16 +4,30 @@ Rails.application.routes.draw do
 
 		devise_for :users, path: 'users', controllers: { sessions: "users/sessions" }
 		devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions" }
-		root  "homes#new"
+		root  "homes#dashboard"
 
 		get 'homes/home', to: 'homes#new'
 		get 'admins/admin', to: 'admins#new', as: :admin_new
 		get 'students/new', to: 'students#new', as: :student_new
+		get 'faculties/student', to: 'faculties#student_index', as: :student_index
+
+		get 'batches/student', to: 'batches#student_batch_index', as: :student_batch_index
 
 
 
 
+	 # root  "batches#index"
 
+
+	  get 'contacts/contact', to: 'contacts#contact'
+	  get 'about_us', to: 'about_us#about_us'
+
+
+
+ 
+
+	resources :faculties
+	resources :batches
 
 
     
