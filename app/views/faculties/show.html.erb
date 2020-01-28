@@ -15,3 +15,12 @@
 </p>
 
 
+	<% if admin_signed_in? %>
+
+ <%=  link_to 'Admin back' ,  faculties_path %>
+
+  <% elsif user_signed_in?%>
+
+        <%=  link_to 'User back' ,  student_index_path  %>
+        <% end %>
+ 

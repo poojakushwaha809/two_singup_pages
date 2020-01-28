@@ -19,8 +19,8 @@ Rails.application.routes.draw do
 	 # root  "batches#index"
 
 
-	  get 'contacts/contact', to: 'contacts#contact'
-	  get 'about_us', to: 'about_us#about_us'
+	  get 'homes/contact', to: 'homes#contact'
+	  get 'about_us', to: 'homes#about_us'
 
 
 

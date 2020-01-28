@@ -20,4 +20,12 @@
 	<%= @batch.ending_time.strftime("%H:%M") %>
 </p>
 
+	<% if admin_signed_in? %>
 
+ <%=  link_to 'Admin back' ,  batches_path %>
+
+  <% elsif user_signed_in?%>
+
+        <%=  link_to 'User back' ,  student_batch_index_path  %>
+        <% end %>
+ 
