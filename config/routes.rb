@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 	  get 'about_us', to: 'homes#about_us'
 
 
-
+    # get '/assets/bootstrap-custom'
  
 
 	resources :faculties

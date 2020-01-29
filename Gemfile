@@ -29,7 +29,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'bootstrap'
 
+gem 'jquery-rails'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
