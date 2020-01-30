@@ -8,22 +8,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <%= render 'layouts/admin' %>
 
      <style>
            
            header
-        {background-color: midnightblue;
+        {background: -webkit-linear-gradient(to right, #000066, #000066, #000066);
+          background: linear-gradient(to right,#000066, #86A8E7, #7F7FD5);
         padding: 20px;
         text-align: right;
         font-size: 16px;
-        
+       
         }
 
 
-        body{color: black;
+        body{color: black;#cc33ff
           background-color: lightcyan}
 
     
@@ -36,7 +35,7 @@
 
     <%= render 'layouts/header' %> &nbsp;&nbsp;&nbsp;&nbsp;
 
-     <p class="notice"><%= notice %></p>
+     <p class="notice" style="color: red; text-align: right;  "><%= notice %></p>
        <p class="alert" style="color: red;"><%= alert %></p>
 
     <%= yield %>

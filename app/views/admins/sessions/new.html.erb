@@ -1,68 +1,70 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-
-
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<body>
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-7">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <span class="glyphicon glyphicon-lock"></span> Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">
-                            Email</label>
-                        <div class="col-sm-9">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-3 control-label">
-                            Password</label>
-                        <div class="col-sm-9">
-                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-9">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"/>
-                                    Remember me
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group last">
-                        <div class="col-sm-offset-3 col-sm-9">
-                            <button type="submit" class="btn btn-success btn-sm">
-                                Sign in</button>
-                                 <button type="reset" class="btn btn-default btn-sm">
-                                Reset</button>
-                        </div>
-                    </div>
-                    </form>
-                </div>
-                <div class="panel-footer">
-                    Not Registred? <a href="http://www.jquery2dotnet.com">Register here</a></div>
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3>Admin Log In</h3>
+        <!-- <div class="d-flex justify-content-end social_icon">
+          <span><i class="fab fa-facebook-square"></i></span>
+          <span><i class="fab fa-google-plus-square"></i></span>
+          <span><i class="fab fa-twitter-square"></i></span>
+        </div> -->
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
+<!--             <input type="text" class="form-control" placeholder="username">
+ -->               
+
+
+   <%= f.email_field :email, autofocus: true, autocomplete: "email", type: "text", class: "form-control", placeholder: "Email" %>
+
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+<!--             <input type="password" class="form-control" placeholder="password">
+ -->
+                <%= f.password_field :password, autocomplete: "current-password", type: "password", class: "form-control", placeholder: "password" %>
+
+          </div>
+          <div class="row align-items-center remember">
+<!--             <input type="checkbox">Remember Me
+ -->                  <%= f.label :Remember_Me, type: "checkbox" %>
+
+          </div>
+          <div class="form-group">
+<!--             <input type="submit" value="Login" class="btn float-right login_btn">
+ -->
+                <%= f.submit "Log in", type:"submit", value:"Login", class:"btn float-right login_btn"%>
+
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-center links">
+          Don't have an account?<a href="#"></a>
+
+            <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+
         </div>
+        <div class="d-flex justify-content-center">
+          <a href="#"></a>
+            <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-<style>
- .body { 
-  background: url('https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+</body>
 
-.panel-default {
-opacity: 0.9;
-margin-top:30px;
-}
-</style>
 
+<%= render 'style' %>
+<% end %>
