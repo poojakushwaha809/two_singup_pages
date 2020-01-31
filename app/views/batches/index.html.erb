@@ -5,9 +5,9 @@
 
   <h1>Listing batches</h1>
 
-  <table class="table table-bordered  ">
+  <table class="table table-bordered table-striped ">
     <thead>
-      <tr class="active">
+      <tr class="table-active">
 
         <th>batch name</th>
         <th>faculty name</th>
@@ -24,14 +24,14 @@
  
   <% @batches.each do |batch| %>
     <tr>
-        <td class="info"><%= batch.batch_name %></td>
-        <td class="info"><%= batch.faculty.faculty_name %></td>
-        <td class="info"><%= batch.starting_time.strftime("%H : %S") %></td>
-        <td class="info"><%= batch.ending_time.strftime("%H : %S") %></td>
+        <td class="table-info active"><%= batch.batch_name %></td>
+        <td class="table-info"><%= batch.faculty.faculty_name %></td>
+        <td class="table-info"><%= batch.starting_time.strftime("%H : %S") %></td>
+        <td class="table-info"><%= batch.ending_time.strftime("%H : %S") %></td>
 
-        <td class="success"><%= link_to 'Show', batch_path(batch), class: "btn btn-success active" %></td>
-        <td class="warning"><%= link_to 'Edit', edit_batch_path(batch) , class: "btn btn-warning active"%></td>
-        <td class="danger"><%= link_to 'Destroy', batch_path(batch),
+        <td class="table-success"><%= link_to 'Show', batch_path(batch), class: "btn btn-success active" %></td>
+        <td class="table-warning"><%= link_to 'Edit', edit_batch_path(batch) , class: "btn btn-warning active"%></td>
+        <td class="table-danger"><%= link_to 'Destroy', batch_path(batch),
         method: :delete,
         data: { confirm: 'Are you sure?' }, class: "btn btn-danger active" %></td>
     </tr>
