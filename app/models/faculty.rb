@@ -1,3 +1,4 @@
 class Faculty < ApplicationRecord
-	has_many :batches
+	has_many :batches, dependent: :destroy
+
 end

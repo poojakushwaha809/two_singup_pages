@@ -1,17 +1,21 @@
+<div  class="container">
+  
 
 <h1>Listing faculties</h1>
-<table>
-  <tr>
+<table class="table table-bordered ">
+  <tr class="table-warning">
     <th>faculty name</th>
-        <th colspan="1"></th>
+        <th colspan="1">Action</th>
 
   </tr>
  
   <% @faculties.each do |faculty| %>
     <tr>
-      <td><%= faculty.faculty_name %></td>
-      <td><%= link_to 'Show', faculty_path(faculty) %></td>
+      <td class="table table-info"><%= faculty.faculty_name %></td>
+      <td class="table-success"><%= link_to 'Show', faculty_path(faculty) %></td>
      
     </tr>
   <% end %>
 </table>
+
+</div>

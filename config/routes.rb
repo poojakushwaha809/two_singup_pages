@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
 	  get 'homes/contact', to: 'homes#contact'
 	  get 'about_us', to: 'homes#about_us'
+	  get 'students/index', to: 'students#index'
 
 
     # get '/assets/bootstrap-custom'

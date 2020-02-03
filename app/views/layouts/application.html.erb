@@ -34,11 +34,19 @@
   </head>
 
   <body>
-
     <%= render 'layouts/header' %> &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+   
+
 
      <p class="notice" style="color: red; text-align: right;  "><%= notice %></p>
        <p class="alert" style="color: red;"><%= alert %></p>
+
+        <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>.,</br>
+          
+    <% end %>
 
     <%= yield %>
   </body>

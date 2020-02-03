@@ -1,16 +1,16 @@
 <div class="container">
   <h1>Listing batches</h1>
 <table class="table table-striped table-bordered">
-  <tr>
-    <th>batch name</th>
+  <tr class="table-active">
+    <th >batch name</th>
         <th colspan="1">Active</th>
 
   </tr>
  
   <% @batches.each do |batch| %>
     <tr>
-      <td><%= batch.batch_name %></td>
-      <td><%= link_to 'Show', batch_path(batch), class: "btn btn-success" %></td>
+      <td class='table table-info'><%= batch.batch_name %></td>
+      <td class= 'table-success'><%= link_to 'Show', batch_path(batch), class: "btn btn-success" %></td>
       
     </tr>
   <% end %>
