@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
 	  get 'homes/contact', to: 'homes#contact'
 	  get 'about_us', to: 'homes#about_us'
-	  get 'students/index', to: 'students#index'
+	  	  get 'students/:user_id/:id', to: 'students#show', as: :students_show
 
 
     # get '/assets/bootstrap-custom'
@@ -29,7 +29,6 @@ Rails.application.routes.draw do
 
 	resources :faculties
 	resources :batches
-
 
     
 

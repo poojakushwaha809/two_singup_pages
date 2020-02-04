@@ -5,12 +5,10 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div>
-           <%= f.label :Student_name %>
-            <%= f.email_field :student_name%>
-
-        </div>
-
+       <div>
+     <%= f.label :student_name %><br />
+     <%= f.text_field :student_name, autofocus: true %>
+</div>
 <p></p>
           <div class="field">
             <%= f.label :Student_email %>
@@ -32,21 +30,20 @@
 <p></p>
 
           <div>
-           <%= f.label :Student_address %>
-            <%= f.email_field :student_address%>
-
-        </div>
+     <%= f.label :student_address %><br />
+     <%= f.text_field :student_address, autofocus: true %>
+</div>
 <p></p>
         <div>
            <%= f.label :Student_contact_number %>
-            <%= f.email_field :contact_number%>
+            <%= f.text_field :contact_number%>
 
         </div>
 <p></p>
 
         <div>
            <%= f.label :Student_college_name %>
-            <%= f.email_field :college_name%>
+            <%= f.text_field :college_name%>
 
         </div>
 
