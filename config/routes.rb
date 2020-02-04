@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
 	  get 'homes/contact', to: 'homes#contact'
 	  get 'about_us', to: 'homes#about_us'
-	  	  get 'students/:user_id/:id', to: 'students#show', as: :students_show
+	  	  get 'students/:user_id', to: 'students#show', as: :students_show
+	  	  resources :students
 
 
     # get '/assets/bootstrap-custom'
