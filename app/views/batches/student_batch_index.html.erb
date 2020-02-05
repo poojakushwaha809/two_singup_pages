@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h1>Listing batches</h1>
 <table class="table table-striped table-bordered">
   <tr class="table-active">
@@ -15,4 +15,47 @@
     </tr>
   <% end %>
 </table>
+</div> -->
+
+
+<div class="card-deck">
+ <% @batches.each do |batch| %>
+  <div class="card"  >
+    <img src='/assets/db1.jpg' alt="" height="200" >
+    <div class="card-body bg ">
+      <h4 class="card-title"><%= batch.batch_name %></h4>
+
+      <h6 class="card-text">  Faculty Name </h6>
+      <p class="card-text"> <%= batch.faculty.faculty_name %>
+</p>
+<h6 class="card-text"> Batch Starting Time</h6>
+<p class="card-text"> <%= batch.starting_time.strftime("%H:%M") %>
+</p>
+
+<h6 class="card-text">Batch Ending Time
+</h6>
+<p class="card-text"> <%= batch.ending_time.strftime("%H:%M") %>
+</p>
+
+
+
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">join us</small>
+    </div>
+  </div>
+ <% end %>
 </div>
+
+<style type="text/css">
+  .bg{background: -webkit-linear-gradient(to left, #000066, #000066, #000066);
+          background: linear-gradient(to bottom right, #ffffff 0%, #99ffcc 100%);
+        padding: 30px;
+        text-align: left;
+        font-size: 16px;
+        size: 9876px
+       
+        }
+          
+      
+</style>

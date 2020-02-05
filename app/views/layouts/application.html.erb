@@ -10,6 +10,9 @@
 
     <%= render 'layouts/admin' %>
 
+
+  <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
      <style>
@@ -17,7 +20,7 @@
            header
         {background: -webkit-linear-gradient(to right, #000066, #000066, #000066);
           background: linear-gradient(to right,#000066, #86A8E7, #7F7FD5);
-        padding: 20px;
+        padding: 30px;
         text-align: right;
         font-size: 16px;
        
@@ -35,9 +38,15 @@
 
   <body>
     <%= render 'layouts/header' %> &nbsp;&nbsp;&nbsp;&nbsp;
+<p></p>
+  <% if user_signed_in? %>
+         <%= link_to "Click Here For Student Details",student_new_path, :class => 'navbar-link pooja', class: "btn btn-info"%> &nbsp;&nbsp;&nbsp;&nbsp;
+ <% end %> 
 
-
-   
+  <% if admin_signed_in? %>
+         <%= link_to "Click Here For Student Details",students_path, :class => 'navbar-link pooja', class: "btn btn-info"%> &nbsp;&nbsp;&nbsp;&nbsp;
+ <% end %>   
+  
 
 
      <p class="notice" style="color: red; text-align: right;  "><%= notice %></p>
