@@ -17,11 +17,11 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
+<p></p>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+<p></p>
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
@@ -30,18 +30,18 @@
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
-
+<p></p>
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+<p></p>
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+        <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
-
+<p></p>
   
           <div>
      <%= f.label :student_address %><br />
@@ -49,18 +49,18 @@
 </div>
 <p></p>
         <div>
-           <%= f.label :Student_contact_number %>
+           <%= f.label :Student_contact_number %></br>
             <%= f.text_field :contact_number%>
 
         </div>
 <p></p>
 
         <div>
-           <%= f.label :Student_college_name %>
+           <%= f.label :Student_college_name %></br>
             <%= f.text_field :college_name%>
 
         </div>
-
+<p></p>
 
   <div class="actions">
     <%= f.submit "Update" %>

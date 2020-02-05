@@ -11,20 +11,20 @@
 </div>
 <p></p>
           <div class="field">
-            <%= f.label :Student_email %>
+            <%= f.label :Student_email %><br>
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           </div>
 <p></p>
           <div class="field">
-            <%= f.label :password %>
+            <%= f.label :password %><br>
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %>
+            <% end %><br>
             <%= f.password_field :password, autocomplete: "new-password" %>
           </div>
 <p></p>
           <div class="field">
-            <%= f.label :password_confirmation %>
+            <%= f.label :password_confirmation %><br>
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
           </div>
 <p></p>
@@ -35,27 +35,31 @@
 </div>
 <p></p>
         <div>
-           <%= f.label :Student_contact_number %>
+           <%= f.label :Student_contact_number %><br>
             <%= f.text_field :contact_number%>
 
         </div>
 <p></p>
 
         <div>
-           <%= f.label :Student_college_name %>
+           <%= f.label :Student_college_name %><br>
             <%= f.text_field :college_name%>
 
         </div>
 
-
+<p></p>
 
           <div class="actions">
             <%= f.submit "Sign up" %>
           </div>
         <% end %>
 
+        <p></p>
         <%= render "users/shared/links" %>
 
         </div>
 
 </div>
+<style type="text/css">
+  .middle{text-align: center;}
+</style>
