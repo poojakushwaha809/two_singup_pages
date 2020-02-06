@@ -4,8 +4,14 @@
         <table class="table table-bordered">
 
         <% if user_signed_in? %>
-             <p class="table table-bordered" , style="text-align:center; color: black; font-size: 80px ">Student Details</p>
-        	
+             <p class="table table-bordered" , style="text-align:center; color: black; font-size: 80px ; border-color: black">Student Details</p>
+
+
+         <tr>
+             <td>Student image</td>
+             <td><%= image_tag(current_user.student_image.url, size:10*10) if current_user.student_image.present? %></br>
+</td>
+         </tr>        	
 
 
         	<tr>
