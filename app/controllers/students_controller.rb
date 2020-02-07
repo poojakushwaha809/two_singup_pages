@@ -6,9 +6,21 @@ class StudentsController < ApplicationController
 
 
 	def index
-		    @user = User.all
+		  @search = User.search(params[:q])
+         @user = @search.result
 
 	end
+	def search
+		index
+		render :index
+		
+	end
+
+
+	 # def index
+		#   @user = User.ransack(params[:user_id])
+		#   @student = @user.result(distinct: true)
+  #    end
 
 
 	def show
@@ -33,6 +45,8 @@ class StudentsController < ApplicationController
 	end
 
 
+
+  
 	def destroy
 	 @user = User.find(params[:id])
 		 @user.destroy

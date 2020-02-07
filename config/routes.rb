@@ -21,8 +21,22 @@ Rails.application.routes.draw do
 
 	  get 'homes/contact', to: 'homes#contact'
 	  get 'about_us', to: 'homes#about_us'
-	  	  get 'students/:user_id', to: 'students#show', as: :students_show
-	  	  resources :students
+
+	  get 'new/index', to: 'students#new_index'
+
+    get 'students/:user_id', to: 'students#show', as: :students_show
+
+
+
+	  	  resources :students do
+	  	  	collection do
+	  	  		match "search" => 'students#index', via: [:get, :post], as: :search
+
+
+	  	    end
+ 		
+	  	  end
+	  	  		
 
 
     # get '/assets/bootstrap-custom'

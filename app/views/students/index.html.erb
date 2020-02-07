@@ -19,44 +19,62 @@
 </div>-->
 
 <!--  This page for Admin to show student details
+
  -->
 
-<div class="container"> 	
-	<h1>Welcome to student details page</h1>
-        <table class="table table-bordered" >
+     <%= search_form_for @search, url: search_students_path, html: {class: 'form-inline col-md-8 col-md-offset-2', method: :post} do |f|%>  
+     <div class="input-daterange">
+      <div class="col-md-4">
 
-             <p class="table table-bordered" , style="text-align:center; color: black; font-size: 80px ">All Student Details</p>
-
-				<tr class="table-warning">
-				<th> Name</th>
-				<th> Email</th>
-        <th colspan="3">Action</th>
-
-				</tr>
- 
-        	
-          <% @user.each do |user| %>
-
-       
-        	<tr>
-
-        		<td>
-        			<%= user.student_name %>
-        		</td>
-
-        		<td>
-        			<%= user.email %>
-        		</td>
-
-				<td class="table-success"><%= link_to 'Show',students_show_path(user), class: "btn btn-success active" %></td>
-				<td class="table-warning"><%= link_to 'Edit', edit_student_path(user) , class: "btn btn-warning active" %></td>
-				<td class="table-danger"><%= link_to 'Destroy', student_path(user),
-				method: :delete,
-				data: { confirm: 'Are you sure?' }, class: "btn btn-danger active" %></td>  																							      
-            </tr>
-
-         <% end %>
-        </table>
-
+        <%= f.text_field :student_name, class: 'user',placeholder:'search student name'%>
           
-     </div>     
+         <div class="col-md-2 form-actions"><br>
+           <%=  f.submit "Search", class: "btn btn-success"%>
+         </div>
+
+      </div>
+     </div>
+     <%end%> 
+
+
+
+
+      <div class="container"> 	
+      	<h1>Welcome to student details page</h1>
+              <table class="table table-bordered" >
+
+                   <p class="table table-bordered" , style="text-align:center; color: black; font-size: 80px ">All Student Details</p>
+
+      				<tr class="table-warning">
+      				<th> Name</th>
+      				<th> Email</th>
+              <th colspan="3">Action</th>
+
+      				</tr>
+       
+              	
+                <% @user.each do |user| %>
+
+                   
+                    	<tr>
+
+                    		<td>
+                    			<%= user.student_name %>
+                    		</td>
+
+                    		<td>
+                    			<%= user.email %>
+                    		</td>
+
+            				<td class="table-success"><%= link_to 'Show',students_show_path(user), class: "btn btn-success active" %></td>
+            				<td class="table-warning"><%= link_to 'Edit', edit_student_path(user) , class: "btn btn-warning active" %></td>
+            				<td class="table-danger"><%= link_to 'Destroy', student_path(user),
+            				method: :delete,
+            				data: { confirm: 'Are you sure?' }, class: "btn btn-danger active" %></td>  																							      
+                        </tr>
+               <% end %>
+
+              </table>
+
+                
+           </div>     
