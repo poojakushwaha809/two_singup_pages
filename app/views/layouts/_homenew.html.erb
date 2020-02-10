@@ -1,0 +1,26 @@
+
+	<div class="slider">
+		
+
+
+		<div class="load"></div>
+
+		<div class="content">
+   
+         <div class="notice" style="color: red; text-align: left;  "><%= notice %></div>
+       <div class="alert" style="color: red;"><%= alert %></div>
+       <div class="container">
+       <% if user_signed_in? %>
+
+			<%= link_to "Click Here For Student Details",student_new_path, :class => 'navbar-link pooja', class: "btn btn-info"%> &nbsp;&nbsp;&nbsp;&nbsp;
+			<% end %> 
+
+			<% if admin_signed_in? %>
+			<%= link_to "Click Here For Student Details",students_path, :class => 'navbar-link pooja', class: "btn btn-info"%>
+			<% end %> 
+			</div>
+		</div>
+	</div>
+
+
+ 

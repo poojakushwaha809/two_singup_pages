@@ -20,41 +20,50 @@
            header
         {background: -webkit-linear-gradient(to right, #000066, #000066, #000066);
           background: linear-gradient(to right,#000066, #86A8E7, #7F7FD5);
-        padding: 30px;
+  padding: 10px 16px;
         text-align: right;
+          width: 100%;
+          top: 0;
         font-size: 16px;
-       
+
         }
 
+        
+
+        
 
         body{  
           background: rgb(238,174,202);
           background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);}
 
           
+         .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to bottom right, #ccccff 0%, #ffffff 100%);
+  color: gray;
+  text-align: center;
+          padding: 7px;
+
+}
+
          </style>
-    <%= render 'layouts/header' %> &nbsp;&nbsp;&nbsp;&nbsp;
+    
+
   </head>
 
   <body>
-   
- <p></p>
- <div>
- <% if user_signed_in? %>
-         <%= link_to "Click Here For Student Details",student_new_path, :class => 'navbar-link pooja', class: "btn btn-info"%> &nbsp;&nbsp;&nbsp;&nbsp;
- <% end %> 
 
-  <% if admin_signed_in? %>
-         <%= link_to "Click Here For Student Details",students_path, :class => 'navbar-link pooja', class: "btn btn-info"%> &nbsp;&nbsp;&nbsp;&nbsp;
- <% end %>   
-  
-<p class="notice" style="color: red; text-align: left;  "><%= notice %></p>
-       <p class="alert" style="color: red;"><%= alert %></p>
-     
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/homenew' %>
+<%= yield %>
+<div class="footer">
+  <p>Join us</p>
+</div>
 
+    </body>
 
-    <%= yield %>
-
-
-  </body>
+    
 </html>
