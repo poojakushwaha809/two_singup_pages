@@ -10,6 +10,8 @@ class StudentsController < ApplicationController
          @user = @search.result
 
 	end
+
+	
 	def search
 		index
 		render :index

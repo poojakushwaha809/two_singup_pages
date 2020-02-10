@@ -33,13 +33,14 @@
 
           
          </style>
-
+    <%= render 'layouts/header' %> &nbsp;&nbsp;&nbsp;&nbsp;
   </head>
 
   <body>
-    <%= render 'layouts/header' %> &nbsp;&nbsp;&nbsp;&nbsp;
-<p></p>
-  <% if user_signed_in? %>
+   
+ <p></p>
+ <div>
+ <% if user_signed_in? %>
          <%= link_to "Click Here For Student Details",student_new_path, :class => 'navbar-link pooja', class: "btn btn-info"%> &nbsp;&nbsp;&nbsp;&nbsp;
  <% end %> 
 
@@ -47,12 +48,13 @@
          <%= link_to "Click Here For Student Details",students_path, :class => 'navbar-link pooja', class: "btn btn-info"%> &nbsp;&nbsp;&nbsp;&nbsp;
  <% end %>   
   
-
-
-     <p class="notice" style="color: red; text-align: right;  "><%= notice %></p>
+<p class="notice" style="color: red; text-align: left;  "><%= notice %></p>
        <p class="alert" style="color: red;"><%= alert %></p>
+     
 
 
     <%= yield %>
+
+
   </body>
 </html>

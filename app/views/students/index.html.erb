@@ -22,22 +22,22 @@
 
  -->
 
-     <%= search_form_for @search, url: search_students_path, html: {class: 'form-inline col-md-8 col-md-offset-2', method: :post} do |f|%>  
-     <div class="input-daterange">
-      <div class="col-md-4">
+     <%= search_form_for @search, url: search_students_path, html: { method: :post} do |f|%>  
+      <div class="user">
 
-        <%= f.text_field :student_name, class: 'user',placeholder:'search student name'%>
-          
-         <div class="col-md-2 form-actions"><br>
-           <%=  f.submit "Search", class: "btn btn-success"%>
-         </div>
+        <%= f.search_field :student_name_cont, class: 'user',placeholder:'search student name'%>
 
-      </div>
      </div>
+
+     <div class="search">
+             <%=  f.submit "Search", class: "btn btn-success btn-sm " %>
+    </div>
+
+
      <%end%> 
 
-
-
+</div>
+<p></p>
 
       <div class="container"> 	
       	<h1>Welcome to student details page</h1>
@@ -77,4 +77,16 @@
               </table>
 
                 
-           </div>     
+           </div> 
+
+
+<style type="text/css">
+  .user{ position: absolute;
+  top: 90px;
+  right: 16px;}
+
+
+  .search{ position: absolute;
+  top: 220px;
+  right: 16px;}
+</style>
