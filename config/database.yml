@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: ambitious_development
+  database: ambitious_development1
   pool: 5
   username: root
   password: root
@@ -10,7 +10,7 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
-  database: ambitious_production
+  database: ambitious_production1
   pool: 5
   username: root
   password: root
