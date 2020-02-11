@@ -29,18 +29,42 @@
 
 
 		<div class="principal">
-				<h1>Welcome to home page</h1>
+				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+				<div class="carousel-item active">
+				<div class="box">
+				<div>This text is the content of the box. We have added a 50px padding, 20px margin and a 15px green border. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 
-<p>1 Web Designing. Web designing is a great opportunity for those who want to work independently. ...
-2 VFX and Animation. ...
-3 Hardware and Networking courses. ...
-4 Software and Programming Language courses. ...
-5 Tally. ...
-6 Cyber security courses. ...
-7 Microsoft Office and Typing courses. ...
-</p>
+				</div>
+				</div>
+				<div class="carousel-item">
+
+				<div class="box">
+				<div>This text is the content of the box. We have added a 50px padding, 20px margin and a 15px green border. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+				</div>
+				</div>
+				<div class="carousel-item">
+
+				<div class="box">
+				<p>	This text is the content of the box. We have added a 50px padding, 20px margin and a 15px green border. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+				</div>
+				</div>
+				</div>
 
 			</div>
+
+ <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 
 <style type="text/css">
 	
@@ -49,14 +73,14 @@
 		padding: 0;
 	}
 
-	.load{animation: 2s}
+	.load{animation: 1s}
 
 	.slider{background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
 		width: 100%;
 		height: 100vh;
-		animation: slide 50s infinite;
+		animation: slide 40s infinite;
 	}
 
 	.content{color: #fff;
@@ -70,20 +94,19 @@
 			top: 70%;
 			transform: translate(-50%,-50%);
 			position: absolute;
-			background-color: rgba(0,0,0,0.5);
 			letter-spacing: 5px;
 			text-align: center;
 		}
 
-		.principal h1{font-size: 60px;
-			text-align: center;
-			margin-bottom: 30px;
-		color: #fff;}
 
-			.principal p{font-size: 20px;
-				text-align: center;
-			color: #fff;}
+		.box { 
+		  width: 700px;
+		  height: 400px;
+		  padding: 60px;
+		  color: #fff;
+		background-color: rgba(0,0,0,0.5);
 
+		}
 
 		@keyframes slide {
 			10%{background-image: url("http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg");}
@@ -97,6 +120,6 @@
 			90%{background-image: url("https://www.gstatic.com/webp/gallery/3.jpg");}
 			92%{background-image: url("https://www.gstatic.com/webp/gallery/4.jpg");}
 			95%{background-image: url("https://www.gstatic.com/webp/gallery/5.jpg");}
-			98%{background-image: url("https://www.gstatic.com/webp/gallery/4.jpg");}
+			100%{background-image: url("https://www.gstatic.com/webp/gallery/4.jpg");}
 		}
 </style>
