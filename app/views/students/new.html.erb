@@ -11,7 +11,16 @@
              <td>Student image</td>
              <td><%= image_tag(current_user.student_image.url, size:10*10) if current_user.student_image.present? %></br>
 </td>
-         </tr>        	
+         </tr> 
+
+         <tr>
+             <td>Batch No.</td>
+             <td><%= current_user.batch.id%></td>
+         </tr>
+
+         <tr><td> Batch Name</td>
+               <td><%= current_user.batch.batch_name%></td> 
+         </tr>       	
 
 
         	<tr>

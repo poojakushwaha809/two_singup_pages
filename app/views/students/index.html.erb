@@ -1,36 +1,37 @@
-<!-- <div  class="container">
-  
 
-<h1>Listing student</h1>
-<table class="table table-bordered ">
-  <tr class="table-warning">
-    <th>user email name</th>
 
-  </tr>
- 
-  <% @user.each do |user| %>
-    <tr>
-      <td class="table table-info"><%=user.email%></td>
-     
-    </tr>
-  <% end %>
-</table>
+<p></p>
 
-</div>-->
 
-<!--  This page for Admin to show student details
+
+<!--  This page for Admin, To show student details
 
  -->
+<!-- 
+In this search form for we use url because here model user and controller student so we to to given path if model and controller are same in this case we can use  @search  we don't need any url -->
+
+
+
+
 
      <%= search_form_for @search, url: search_students_path, html: { method: :post} do |f|%>  
       <div class="user">
 
         <%= f.search_field :student_name_cont, class: 'user',placeholder:'search student name'%>
-
      </div>
+
+      <b class="place"> Search with student name or Email or Both</b>
+
+     <div class="email">
+        <%= f.search_field :email_matches, class: 'email',placeholder:'search email id'%>
+      </div>
+
      <div class="search">
              <%=  f.submit "Search", class: "btn btn-success btn-sm " %>
     </div>
+
+
+
 
 
      <%end%> 
@@ -39,13 +40,15 @@
 <p></p>
 
       <div class="container"> 	
-      	<h1>Welcome to student details page</h1>
-              <table class="table table-bordered" >
+              <table class="table table-bordered cool"  >
 
-                   <p class="table table-bordered" , style="text-align:center; color: black; font-size: 80px ">All Student Details</p>
+                   <p class="table table-bordered  table-active effect" ,>All Student Details</p>
 
-      				<tr class="table-warning">
+      				<tr class="table-active">
+              <th>Student no.</th>
       				<th> Name</th>
+              <th>Batch No.</th>
+               <th>Batch Name</th>
       				<th> Email</th>
               <th colspan="3">Action</th>
 
@@ -55,15 +58,23 @@
                 <% @user.each do |user| %>
 
                    
-                    	<tr>
+                    	<tr >
 
-                    		<td>
+                        <td class="table-active"><%= user.id%></td>
+
+ 
+                    		<td class="table-active">
                     			<%= user.student_name %>
-                    		</td>
+                    		</td class="table-active">
 
-                    		<td>
+                        <td class="table-active"><%= user.batch.id%></td>
+
+                        <td class="table-active"><%= user.batch.batch_name%></td>
+
+                    		<td class="table-active">
                     			<%= user.email %>
                     		</td>
+
 
             				<td class="table-success"><%= link_to 'Show',students_show_path(user), class: "btn btn-success active" %></td>
             				<td class="table-warning"><%= link_to 'Edit', edit_student_path(user) , class: "btn btn-warning active" %></td>
@@ -78,14 +89,44 @@
                 
            </div> 
 
-
 <style type="text/css">
   .user{ position: absolute;
   top: 70px;
+  left:400px;}
+
+  .email{ position: absolute;
+  top: 70px;
   right:40px;}
+
 
 
   .search{ position: absolute;
   top: 140px;
   right: 16px;}
+
+  .place{ position: absolute;
+  top: 170px;
+  right: 120px;
+  font-style: italic;
+font-family: cursive;
+color: white;
+font-size: 18px}
+
+.cool{-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);margin-top: 40px;font-family: Georgia, serif;
+font-size: 18px;
+letter-spacing: 0.2px;
+word-spacing: 0.4px;
+color: black;
+font-weight: 400;
+text-decoration: none solid rgb(68, 68, 68);
+font-style: italic;
+font-variant: normal;
+text-transform: none;
+background: rgba(128,233,245,0.45) url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1310&q=80") repeat scroll 0% 50%;}
+
+.effect{ text-align:center; color: black; font-size: 80px;font-family: cursive; font-style: italic; -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); margin-top: 50px;
+background: rgba(42,245,212,0.49) url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=355&q=80") repeat scroll 47px -23px; }
+
 </style>

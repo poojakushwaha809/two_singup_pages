@@ -260,7 +260,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-config.omniauth :google_oauth2, 'GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', {}
+# config.omniauth :google_oauth2, '27587632278-vji46m6ibej5c0o439p7macjrbhn2s7m.apps.googleusercontent.com
+# ', 'hxEud4QjbCKZgq0FYCdwAST8'
+
+
+  config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], access_type: "online"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -299,7 +303,6 @@ config.omniauth :google_oauth2, 'GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', {}
   # config.sign_in_after_change_password = true
   config.scoped_views = true
 
-config.omniauth :google_oauth2, 'GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', {}
 
 
 end

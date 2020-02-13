@@ -11,9 +11,8 @@
     <%= render 'layouts/admin' %>
 
 
-  <meta charset="utf-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.2">
 
      <style>
            
@@ -22,9 +21,11 @@
           background: linear-gradient(to right,#000066, #86A8E7, #7F7FD5);
   padding: 10px 16px;
         text-align: right;
-          width: 100%;
           top: 0;
-        font-size: 16px;
+        font-size: 18px;
+        font-style: italic;
+        font-family: cursive; 
+
 
         }
 
@@ -33,8 +34,7 @@
         
 
         body{  
-          background: rgb(238,174,202);
-          background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);}
+          background: rgba(128,233,245,0.45) url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1310&q=80") repeat scroll 1px -12px;}
 
           
          .footer {
@@ -59,11 +59,11 @@
     <%= render 'layouts/header' %>
     <%= render 'layouts/homenew' %>
 <%= yield %>
-<div class="footer">
-  <p>Join us</p>
-</div>
+
 
     </body>
-
-    
+<!-- 
+    <div class="footer">
+  <p>Join us</p>
+</div> -->
 </html>

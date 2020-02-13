@@ -13,6 +13,15 @@
              <td><%= image_tag(@user.student_image.url, size:10*10) if @user.student_image.present?%></td>
          </tr> 
 
+         <tr>
+             <td>Batch No.</td>
+             <td><%= @user.batch.id%></td>
+         </tr>
+
+         <tr><td> Batch Name</td>
+               <td><%= @user.batch.batch_name%></td> 
+         </tr>     
+
 
         	<tr>
         		<td>Logged in as </td>
