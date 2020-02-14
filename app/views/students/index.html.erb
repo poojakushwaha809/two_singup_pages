@@ -13,8 +13,9 @@ In this search form for we use url because here model user and controller studen
 
 
 
+      <div class="container">
+     <%= search_form_for @search, url: search_students_path, html: { method: :post} do |f|%>
 
-     <%= search_form_for @search, url: search_students_path, html: { method: :post} do |f|%>  
       <div class="user">
 
         <%= f.search_field :student_name_cont, class: 'user',placeholder:'search student name'%>
@@ -30,16 +31,8 @@ In this search form for we use url because here model user and controller studen
              <%=  f.submit "Search", class: "btn btn-success btn-sm " %>
     </div>
 
-
-
-
-
      <%end%> 
-
-</div>
-<p></p>
-
-      <div class="container"> 	
+<p></p> 	
               <table class="table table-bordered cool"  >
 
                    <p class="table table-bordered  table-active effect" ,>All Student Details</p>
@@ -91,25 +84,25 @@ In this search form for we use url because here model user and controller studen
 
 <style type="text/css">
   .user{ position: absolute;
-  top: 70px;
+  top: 75px;
   left:400px;}
 
   .email{ position: absolute;
-  top: 70px;
-  right:40px;}
+  top: 75px;
+  left :500px;}
 
 
 
   .search{ position: absolute;
-  top: 140px;
-  right: 16px;}
+  top: 190px;
+  left: 1130px;}
 
   .place{ position: absolute;
-  top: 170px;
-  right: 120px;
+  top: 120px;
+  left: 800px;
   font-style: italic;
 font-family: cursive;
-color: white;
+color: gray;
 font-size: 18px}
 
 .cool{-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
@@ -128,5 +121,6 @@ background: rgba(128,233,245,0.45) url("https://images.unsplash.com/photo-152845
 .effect{ text-align:center; color: black; font-size: 80px;font-family: cursive; font-style: italic; -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
 box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); margin-top: 50px;
 background: rgba(42,245,212,0.49) url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=355&q=80") repeat scroll 47px -23px; }
+.table-bordered{text-align: center;}
 
 </style>

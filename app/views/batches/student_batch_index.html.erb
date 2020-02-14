@@ -18,8 +18,11 @@
 </div> -->
 
 <p></p>
-<div class="card-deck"  style="width: 100rem; height:4rem">
+<div class="card-deck"  style="width: 80rem; height:4rem">
+  <div class="row">
  <% @batches.each do |batch| %>
+ <div class="col-md-3">
+  <p>
   <div class="card"  >
     <img src='/assets/db1.jpg' alt="" height="200" >
     <div class="card-body bg ">
@@ -44,7 +47,10 @@
       <small class="text-muted">join us</small>
     </div>
   </div>
+</p>
+</div>
  <% end %>
+</div>
 </div>
 
 <style type="text/css">

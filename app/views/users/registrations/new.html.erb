@@ -4,7 +4,7 @@
 <body>
 <div class="page-container">
             
-      <h1>Sign Up</h1>
+      <h1>Studendet Sign Up</h1>
         
         <%= f.collection_select :batch_id, Batch.order(:batch_name),:id,:batch_name, include_blank: true %>
    
@@ -14,12 +14,12 @@
     
     <%= f.text_field :student_name, autofocus: true, placeholder: "Studnet Name", class:"Name" %> 
 
-       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "Email", placeholder:"Email" %>
-       
+       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "Email", placeholder:"Email" %><p></p>
+      
+            <%= f.password_field :password, autocomplete: "new-password", type:"password", class:"Address", placeholder:"Password" %>
             <% if @minimum_password_length %><br>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %>
-            <%= f.password_field :password, autocomplete: "new-password", type:"password", class:"Address", placeholder:"Password" %>
 
             <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm password" %>
 
@@ -29,10 +29,11 @@
             <%= f.text_field :student_address, autofocus: true, placeholder: "Address" %>
 
 
-            <%= f.text_field :contact_number, type:"text", class:"Tele", placeholder:"Contact No."%>
+            <%= f.text_field :contact_number, type:"text", class: "Tele", placeholder:"Contact No."%>
 
 
-                  <%= f.submit "sign up" %>
+                  <%= f.submit "sign up", class: "button" %>
+                  <p></p>
                    <%= render "users/shared/links" %>
 
 
@@ -117,7 +118,7 @@ box-shadow:
         0 2px 7px 0 rgba(0,0,0,.2);
 }
 
-button {
+.button {
 cursor:pointer;
 width:300px;
 height:44px;
