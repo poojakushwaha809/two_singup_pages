@@ -1,29 +1,29 @@
 <div class="container">
 	
 	<h1>Welcome to student page</h1>
-        <table class="table table-bordered">
+        <table class="table table-bordered cool">
 
         <% if user_signed_in? %>
-             <p class="table table-bordered" , style="text-align:center; color: black; font-size: 80px ; border-color: black">Student Details</p>
+             <p class="table table-bordered effect" , style="text-align:center; color: black; font-size: 80px ; border-color: black">Student Details</p>
 
 
-         <tr>
+         <tr class= "table-active">
              <td>Student image</td>
              <td><%= image_tag(current_user.student_image.url, size:10*10) if current_user.student_image.present? %></br>
 </td>
          </tr> 
 
-         <tr>
+         <tr class= "table-active">
              <td>Batch No.</td>
              <td><%= current_user.batch.id%></td>
          </tr>
 
-         <tr><td> Batch Name</td>
+         <tr class= "table-active"><td> Batch Name</td>
                <td><%= current_user.batch.batch_name%></td> 
          </tr>       	
 
 
-        	<tr>
+        	<tr class= "table-active">
         		<td>Logged in as </td>
         		<td>
         			<%= current_user.email %>
@@ -32,7 +32,7 @@
         		
         	</tr>
 
-        	<tr>
+        	<tr class= "table-active">
         		<td>Name </td>
 
         		<td>
@@ -40,7 +40,7 @@
         		</td>
         	</tr>
 
-            <tr>
+            <tr class= "table-active">
         		<td>College name </td>
 
         		<td>
@@ -49,7 +49,7 @@
         	</tr>
 
 
-        	<tr>
+        	<tr class= "table-active">
         		<td>Contant No. </td>
 
         		<td>
@@ -58,7 +58,7 @@
         	</tr>
 
 
-        	<tr>
+        	<tr class= "table-active">
         		<td>Address</td>
 
         		<td>
@@ -76,3 +76,23 @@
           
     <% end %>
 </div>
+
+<style type="text/css">
+    .cool{-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);margin-top: 40px;font-family: Georgia, serif;
+font-size: 18px;
+letter-spacing: 0.2px;
+word-spacing: 0.4px;
+color: black;
+font-weight: 400;
+text-decoration: none solid rgb(68, 68, 68);
+font-style: italic;
+font-variant: normal;
+text-transform: none;
+background: rgba(42,245,212,0.49) url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=355&q=80") repeat scroll 47px -23px;}
+
+.effect{ text-align:center; color: black; font-size: 80px;font-family: cursive; font-style: italic; -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); margin-top: 50px;
+background: rgba(42,245,212,0.49) url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=355&q=80") repeat scroll 47px -23px; }
+.table-bordered{text-align: center;}
+</style>

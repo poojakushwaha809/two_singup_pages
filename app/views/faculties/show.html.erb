@@ -1,30 +1,30 @@
 <div class="container">
 	
 
-<p>
-	<strong>Faculty name</strong>
-	<%= @faculty.faculty_name %>
-</p> 
- 
+	<p>
+		<strong>Faculty name</strong>
+		<%= @faculty.faculty_name %>
+	</p> 
+	
 
-<p>
-	<strong>Email</strong>
-	<%= @faculty.email %>
-</p>
+	<p>
+		<strong>Email</strong>
+		<%= @faculty.email %>
+	</p>
 
 
 	<% if admin_signed_in? %>
 
 	<p>
-	<strong>Contact</strong>
-	<%= @faculty.contact %>
-</p>
+		<strong>Contact</strong>
+		<%= @faculty.contact %>
+	</p>
 
- <%=  link_to 'Admin back' ,  faculties_path %>
+	<%=  link_to 'Admin back' ,  faculties_path %>
 
-  <% elsif user_signed_in?%>
+	<% elsif user_signed_in?%>
 
-        <%=  link_to 'User back' ,  student_index_path  %>
-        <% end %>
- 
+	<%=  link_to 'User back' ,  student_index_path  %>
+	<% end %>
+	
 </div>

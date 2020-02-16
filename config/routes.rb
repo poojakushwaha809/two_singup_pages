@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 		# eg. http://localhost:3000/users/sign_in
 		# eg. http://localhost:3000/admins/sign_in
   # devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
-devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+devise_for :users, controllers: { sessions: "users/sessions"} 
 
 devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions"}
 		root  "homes#dashboard"

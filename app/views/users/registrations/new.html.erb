@@ -1,104 +1,111 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
-  
+
 <body>
-<div class="page-container">
-            
-      <h1>Studendet Sign Up</h1>
-        
-        <%= f.collection_select :batch_id, Batch.order(:batch_name),:id,:batch_name, include_blank: true %>
-   
-       <%= f.file_field :student_image, class: "image", placeholder: "student image" %>
+  <video autoplay muted loop class="myVideo">
+   <source src= https://static.videezy.com/system/resources/previews/000/020/024/original/Diana_Cropped_19.mp4>
 
-
-    
-    <%= f.text_field :student_name, autofocus: true, placeholder: "Studnet Name", class:"Name" %> 
-
-       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "Email", placeholder:"Email" %><p></p>
-      
-            <%= f.password_field :password, autocomplete: "new-password", type:"password", class:"Address", placeholder:"Password" %>
-            <% if @minimum_password_length %><br>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %>
-
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm password" %>
-
-            <%= f.text_field :college_name, placeholder: "College Name"%>
-
-
-            <%= f.text_field :student_address, autofocus: true, placeholder: "Address" %>
-
-
-            <%= f.text_field :contact_number, type:"text", class: "Tele", placeholder:"Contact No."%>
-
-
-                  <%= f.submit "sign up", class: "button" %>
-                  <p></p>
-                   <%= render "users/shared/links" %>
-
-
-        </div>
-    
+   </video>
 
 </body>
-</html>
 
-<% end %>
+
+<div class="content">
+  <p></p>
+       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+               <p style="text-align:">   <%= render "users/shared/error_messages", resource: resource %></p>
+
+               <div class style="text-align: center; " >
+                      
+                    <%= f.collection_select :batch_id, Batch.order(:batch_name),:id,:batch_name, include_blank: true %>
+                     <%= f.label  "Select course "  %> 
+                </div><p></p>
+                 
+                 <div>
+                  <%= f.file_field :student_image, class: "image", placeholder: "student image" %>
+              </div>
+
+
+              <div style="text-align: ">
+                  <%= f.text_field :student_name, autofocus: true, placeholder: "Studnet Name", class:"Name" %>
+                 </div>
+                 <div>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "Email", placeholder:"Email" %>
+              </div>
+
+
+              <div style="text-aling: ">
+                  <%= f.password_field :password, autocomplete: "new-password", type:"password", class:"Address", placeholder:"Password" %>
+                  <br><% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %>
+                </div>
+
+
+                <div style="text-aling: ">
+                  <%= f.password_field :password, autocomplete: "new-password", placeholder:"Confirm password" %>
+                     
+                </div>
+
+
+                <div style="text-aling: ">
+                    <%= f.text_field :college_name, placeholder: "College Name"%>
+                </div>
+
+
+
+                <div style="text-aling: ">
+                    <%= f.text_field :student_address, autofocus: true, placeholder: "Address" %>
+                </div>
+
+
+
+                <div style="text-aling: ">
+                    <%= f.text_field :contact_number, type:"text", class: "Tele", placeholder:"Contact No."%>
+                </div>
+
+
+
+                <div style="text-aling: ">
+                    <%= f.submit "Submit", class: "button" %>
+                </div>
+                <br>
+             <%= render "users/shared/links" %>
+
+
+        <%end%>
+</div>
+
+
 
 <style type="text/css">
-  body {
-background:url(https://preview.ibb.co/g6MVS9/gg.png);
-font-family:'PT Sans',Helvetica, Arial, sans-serif;
-color:#fff;
-   background-repeat: no-repeat;
-   background-size:cover;
-}
-
-.page-container {
-margin: 120px auto 0 auto;
-}
-
-h1 {
-  font-size: 30px;
-  font-weight: 700;
-  text-shadow:0 1px 4px rgba(0,0,0,.2);
-  text-align:center;
-}
 
 
-form {
-position:relative;
-width:305px;
-margin:15px auto 0 auto;
-text-align:center;
-
-}
 
 
 input {
-width:270px;
-height:42px;
-margin-top:25px;
-padding:0 15px;
-background:#2d2d2d;
-background:rgba(45,45,45,.15);
--moz-border-radius: 6px;
--webkit-border-radius:6px;
-text-align:center;
-border-radius:6px;
-border:1px solid #3d3d3d;
-border:1px solid rgba(255,255,255,.15);
--moz-box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset;
--webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
-font-family: 'PT Sans', Helvetica, Arial, sans-serif;
-font-size:16px;
-color:#fff;
-text-shadow:0 1px 2px rgba(0,0,0,.1);
--o-transition: all .2s;
--moz-transition: all .2s;
--webkit-transition: all .2s;
--ms-transition: all .2s;
+    width:270px;
+    height:38px;
+    margin-top:0px;
+    padding:0 15px;
+    background:#2d2d2d;
+    background:rgba(45,45,45,.15);
+    -moz-border-radius: 6px;
+    -webkit-border-radius:6px;
+    text-align:center;
+    border-radius:6px;
+    border:1px solid #3d3d3d;
+    border:1px solid rgba(255,255,255,.15);
+    -moz-box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset;
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-size:16px;
+    color:#fff;
+    text-shadow:0 1px 2px rgba(0,0,0,.1);
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -ms-transition: all .2s;
 }
 
 input:-moz-placeholder { color: #fff; }
@@ -106,71 +113,71 @@ input:-ms-input-placeholder { color: #fff; }
 input::-webkit-input-placeholder { color: #fff; }
 
 input:focus {
-outline:none;
--moz-box-shadow:
-        0 2px 3px 0 rgba(0,0,0,.1) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
--webkit-box-shadow:
-        0 2px 3px 0 rgba(0,0,0,.1) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
-box-shadow:
-        0 2px 3px 0 rgba(0,0,0,.1) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
+    outline:none;
+    -moz-box-shadow:
+    0 2px 3px 0 rgba(0,0,0,.1) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+    0 2px 3px 0 rgba(0,0,0,.1) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
+    box-shadow:
+    0 2px 3px 0 rgba(0,0,0,.1) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
 }
 
 .button {
-cursor:pointer;
-width:300px;
-height:44px;
-margin-top:25px;
-padding:0;
-background:#ef4300;
--moz-border-radius: 6px;
--webkit-border-radius: 6px;
-border-radius: 6px;
-border:1px solid #ff730e;
--moz-box-shadow:
-        0 15px 30px 0 rgba(255,255,255,.25) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
--webkit-box-shadow:
-        0 15px 30px 0 rgba(255,255,255,.25) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
-box-shadow:
-        0 15px 30px 0 rgba(255,255,255,.25) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
-font-family:'PT Sans', Helvetica, Arial, sans-serif;
-font-size:14px;
-font-weight:700;
-color:#fff;
-text-shadow:0 1px 2px rgba(0,0,0,.1);
--o-transition: all .2s;
+    cursor:pointer;
+    width:300px;
+    height:44px;
+    margin-top:25px;
+    padding:0;
+    background:#ef4300;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border:1px solid #ff730e;
+    -moz-box-shadow:
+    0 15px 30px 0 rgba(255,255,255,.25) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+    0 15px 30px 0 rgba(255,255,255,.25) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
+    box-shadow:
+    0 15px 30px 0 rgba(255,255,255,.25) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
+    font-family:'PT Sans', Helvetica, Arial, sans-serif;
+    font-size:14px;
+    font-weight:700;
+    color:#fff;
+    text-shadow:0 1px 2px rgba(0,0,0,.1);
+    -o-transition: all .2s;
     -moz-transition: all .2s;
     -webkit-transition: all .2s;
     -ms-transition: all .2s;
 }
 
-button:hover {
+.button:hover {
     -moz-box-shadow:
-        0 15px 30px 0 rgba(255,255,255,.15) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
+    0 15px 30px 0 rgba(255,255,255,.15) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
     -webkit-box-shadow:
-        0 15px 30px 0 rgba(255,255,255,.15) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
+    0 15px 30px 0 rgba(255,255,255,.15) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
     box-shadow:
-        0 15px 30px 0 rgba(255,255,255,.15) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
+    0 15px 30px 0 rgba(255,255,255,.15) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
 }
 
-button:active {
+.button:active {
     -moz-box-shadow:
-        0 15px 30px 0 rgba(255,255,255,.15) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
+    0 15px 30px 0 rgba(255,255,255,.15) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
     -webkit-box-shadow:
-        0 15px 30px 0 rgba(255,255,255,.15) inset,
-        0 2px 7px 0 rgba(0,0,0,.2);
+    0 15px 30px 0 rgba(255,255,255,.15) inset,
+    0 2px 7px 0 rgba(0,0,0,.2);
     box-shadow:        
-        0 5px 8px 0 rgba(0,0,0,.1) inset,
-        0 1px 4px 0 rgba(0,0,0,.1);
+    0 5px 8px 0 rgba(0,0,0,.1) inset,
+    0 1px 4px 0 rgba(0,0,0,.1);
 
     border: 0px solid #ef4300;
 }
@@ -202,4 +209,40 @@ button:active {
 
 
 
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+
+.myVideo {
+    position: fixed;
+    min-height: : 100%;
+    min-width: 100%;
+
+}
+
+.content {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+
 </style>
+
+
+<script>
+  var video = document.getElementById("myVideo");
+
+</script>
+
