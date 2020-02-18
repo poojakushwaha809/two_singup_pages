@@ -8,12 +8,14 @@ class BatchesController < ApplicationController
 		@batches = Batch.all
 	end
 
+	
+
 	def new
       @batch = Batch.new	
 	end
 
 	def create
-		
+		byebug
 	  @batch = Batch.new(batch_params)
 	 
 	 if @batch.save

@@ -1,3 +1,8 @@
+
+
+<!-- student details page this page for student where they can see our details only. this page see when student login
+ -->
+
 <div class="container">
 	
 	<h1>Welcome to student page</h1>
@@ -9,8 +14,7 @@
 
          <tr class= "table-active">
              <td>Student image</td>
-             <td><%= image_tag(current_user.student_image.url, size:10*10) if current_user.student_image.present? %></br>
-</td>
+             <td><%= image_tag(current_user.student_image.url, size:10*10) if current_user.student_image.present? %> </td>
          </tr> 
 
          <tr class= "table-active">

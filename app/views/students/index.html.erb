@@ -4,16 +4,19 @@
 
 
 
-<!--  This page for Admin, To show student details
+<!--  This page for Admin, To show All student details
 
  -->
-<!-- 
-In this search form for we use url because here model user and controller student so we to to given path if model and controller are same in this case we can use  @search  we don't need any url -->
 
 
 
 
       <div class="container">
+
+<!-- 
+In this search_form_for we use url because here model user and controller student so we to to given path if model and controller are same in this case we can use  @search  we don't need any url -->
+
+
      <%= search_form_for @search, url: search_students_path, html: { method: :post} do |f|%>
 
       <div class="user">

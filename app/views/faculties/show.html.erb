@@ -12,6 +12,22 @@
 		<%= @faculty.email %>
 	</p>
 
+	
+
+	<p>
+		<strong>total no. of batch</strong>
+		<%= @faculty.batches.ids.count %>
+	</p>
+
+  <p>
+		<strong>batch no. faculty teaching</strong>
+		<%= @faculty.batches.ids %>
+	</p>
+
+	<p>
+		<strong>batches name faculty teach</strong>
+		<%= @faculty.batches.collect(&:batch_name) %>
+	</p>
 
 	<% if admin_signed_in? %>
 
