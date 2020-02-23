@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <head>
   <title>Coaching</title>
   <%= csrf_meta_tags %>
@@ -11,24 +9,20 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   
 
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 
   <style>
    
    header
    {background: -webkit-linear-gradient(to right, #000066, #000066, #000066);
     background: linear-gradient(to right,#000066, #86A8E7, #7F7FD5);
-    padding: 10px 16px;
     text-align: right;
     top: 0;
     font-size: 20px;
     font-style: italic;
     font-family: cursive;
-    width: auto;
-    height: auto;
-    background-size: auto;
   }
 
   
@@ -37,10 +31,9 @@
 
   body{
     background-image: url('https://cdn.pixabay.com/photo/2017/12/10/20/56/feather-3010848_960_720.jpg');
-    background-size: auto;
+    background-size: cover;
     background-repeat: repeat;
-    height: auto;
-    width: auto;
+    height: 100%;
     font-family: 'Numans', sans-serif;
     /* background: rgba(128,233,245,0.45) url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1310&q=80") repeat scroll 0px 0px;}*/
     
@@ -64,14 +57,12 @@
 </head>
 
 <body>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
   <%= render 'layouts/header' %>
   <%= render 'layouts/homenew' %>
   <%= yield %>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
