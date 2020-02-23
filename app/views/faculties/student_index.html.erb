@@ -3,16 +3,16 @@
 
 <p></p>
 
-<div class="card-deck dn" style="width: 75rem;">
+<div class="card-deck cn" style="width: 70rem; height:4rem">
   <div class="row">
 
     <% @faculties.each do |faculty| %>
-    <div class="col-md-4">
+    <div class="col-4">
       <p>  
 
         <div class="card"  >
-          <img src='/assets/db.jpg' alt="" height="200" width="350" >
-          <div class="card-body cg ">
+          <img src='/assets/db.jpg' alt="" height="200" >
+          <div class="card-body bg ">
             <h4 class="card-title"><%= faculty.faculty_name %></h4>
 
             <h6 class="card-text">  Faculty Name </h6>
@@ -35,30 +35,17 @@
 
 </div>
 <style type="text/css">
-  .cg{background: -webkit-linear-gradient(to left, #000066, #000066, #000066);
+  .bg{background: -webkit-linear-gradient(to left, #000066, #000066, #000066);
     background: linear-gradient(to bottom right, #ccccff 0%, #ffffff 100%);
-    padding-left: : 0px;
+    padding: 30px;
     text-align: left;
-    size: 9876px;
-    font-family: "Times New Roman"; Times, serif;
-    font-size: 20px;
-    letter-spacing: -0.4px;
-    word-spacing: 1.8px;
-    color: #000000;
-    font-weight: 400;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: capitalize;
-      width: auto;
-      height: auto;
+    font-size: 16px;
+    size: 987px;
+    
   }
-
-    .dn{position: relative;
-      left: 70px;
-      bottom:0;
-      width: 1200px;
-      border: 1px solid black;}
+  .cn{position: relative;
+left: 70px;
+bottom:0;}
 
 
  /* .card-columns {
