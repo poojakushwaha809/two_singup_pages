@@ -8,6 +8,7 @@
     
   
 	<% if admin_signed_in? %>
+     <%= link_to "Subjects",subjects_path, :class => 'navbar-link pooja'%> &nbsp;&nbsp;&nbsp;&nbsp;
 
      <%= link_to "Batches",batches_path, :class => 'navbar-link pooja'%> &nbsp;&nbsp;&nbsp;&nbsp;
        <%= link_to "Faculties",faculties_path, :class => 'navbar-link pooja'%> &nbsp;&nbsp;&nbsp;&nbsp;
