@@ -1,17 +1,17 @@
 
 
 <p></p>
-<div class="card-deck"  style="width: 70rem; height:4rem">
+<div class="card-deck"  style="width: 80rem; height:0rem">
   <div class="row  cn">
    <% @batches.each do |batch| %>
-   <div class="col-4">
+   <div class="col-md-4">
     <p>
       <div class="card"  >
         <img src='https://cdn.pixabay.com/photo/2018/08/15/13/10/galaxy-3608029_960_720.jpg' alt="" height="200" >
         <div class="card-body bg ">
           <b class="card-title">batch name</b><br>
 
-          <h4 class="card-title"><%= batch.batch_name %></h4>
+          <h5 class="card-title"><%= batch.batch_name %></h5>
 
 
           <b class="card-text"> Batch Starting Time</b>
@@ -23,32 +23,32 @@
           <h5 class="card-text"> <%= batch.ending_time.strftime("%H:%M") %>
           </h5>
           <table class="table-bordered local">
-          
-          <tr class="table-active">
-            <th>faculty name</th>
-            <th>subject <br>faculty teach</th>
-          </tr>
+
+            <tr class="table-active">
+              <th>faculty name</th>
+              <th>subject <br>faculty teach</th>
+            </tr>
 
 
-          <% batch.batch_faculty_subjects.each do |faculty| %>
-          <tr class="table-active">
-            <td>
-              <%= faculty.faculty.faculty_name %></td>
+            <% batch.batch_faculty_subjects.each do |faculty| %>
+            <tr class="table-active">
               <td>
-             <%= faculty.subject.subject_name%>
+                <%= faculty.faculty.faculty_name %></td>
+                <td>
+                 <%= faculty.subject.subject_name%>
 
-            </td>
-          </tr>
-
-
-          <% end %>
-
-          </table>
+               </td>
+             </tr>
 
 
-        </div>
+             <% end %>
 
-        <div class="card-footer">
+           </table>
+
+
+         </div>
+
+         <div class="card-footer">
           <small class="text-muted">batch details</small>
         </div>
       </div>
@@ -61,37 +61,40 @@
 <style type="text/css">
   .bg{background: -webkit-linear-gradient(to left, #000066, #000066, #000066);
     background: linear-gradient(to bottom right, #ccccff 0%, #ffffff 100%);
-    padding: 20px;
+    padding-left: : 0px;
     text-align: left;
-    font-size: 16px;
     size: 9876px;
     font-family: "Times New Roman"; Times, serif;
-font-size: 25px;
-letter-spacing: -0.4px;
-word-spacing: 1.8px;
-color: #000000;
-font-weight: 400;
-text-decoration: none;
-font-style: normal;
-font-variant: normal;
-text-transform: capitalize; }
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    word-spacing: 1.8px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: capitalize;
+
+  }
 
   .local{background: -webkit-linear-gradient(to left, #000066, #000066, #000046);
     background: linear-gradient(to bottom right, #ccccff 0%, #ffffff 100%);
-font-family: "Times New Roman", Times, serif;
-font-size: 20px;
-letter-spacing: -0.4px;
-word-spacing: 1.8px;
-color: #000000;
-font-weight: 400;
-text-decoration: none;
-font-style: center;
-font-variant: normal;
-text-transform: capitalize;
-text-align: center;
-}
-.cn{position: relative;
-left: 70px;
-bottom:0;}
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    word-spacing: 1.8px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: center;
+    font-variant: normal;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .cn{position: relative;
+    left: 70px;
+    bottom:0;
+   width: 1200px;
+  }
 
-</style>
+  </style>
