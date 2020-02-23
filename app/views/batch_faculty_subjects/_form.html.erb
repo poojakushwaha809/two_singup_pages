@@ -1,0 +1,12 @@
+
+          <%= form_for([@batch, @batch.batch_faculty_subjects.build]) do |f| %>
+        <strong>select faculty </strong>
+          <%= f.collection_select :faculty_id, Faculty.order(:faculty_name),:id,:faculty_name, include_blank: true %>
+          <strong>select subject</strong>
+          <%= f.collection_select :subject_id, Subject.order(:subject_name),:id,:subject_name, include_blank: true %>
+
+        </p>
+        <%= f.submit %>
+      </p>
+      <% end %>
+

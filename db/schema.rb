@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_105531) do
+ActiveRecord::Schema.define(version: 2020_02_20_090328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 2020_02_03_105531) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "batch_faculty_subjects", force: :cascade do |t|
+    t.integer "batch_id"
+    t.integer "faculty_id"
+    t.integer "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "batches", force: :cascade do |t|
     t.string "batch_name"
     t.time "starting_time"
@@ -40,6 +48,12 @@ ActiveRecord::Schema.define(version: 2020_02_03_105531) do
     t.string "faculty_name"
     t.integer "contact"
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "subject_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

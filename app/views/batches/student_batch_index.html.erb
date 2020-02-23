@@ -1,67 +1,97 @@
-<!-- <div class="container">
-  <h1>Listing batches</h1>
-<table class="table table-striped table-bordered">
-  <tr class="table-active">
-    <th >batch name</th>
-        <th colspan="1">Active</th>
 
-  </tr>
- 
-  <% @batches.each do |batch| %>
-    <tr>
-      <td class='table table-info'><%= batch.batch_name %></td>
-      <td class= 'table-success'><%= link_to 'Show', batch_path(batch), class: "btn btn-success" %></td>
-      
-    </tr>
-  <% end %>
-</table>
-</div> -->
 
 <p></p>
-<div class="card-deck"  style="width: 80rem; height:4rem">
-  <div class="row">
- <% @batches.each do |batch| %>
- <div class="col-md-3">
-  <p>
-  <div class="card"  >
-    <img src='/assets/db1.jpg' alt="" height="200" >
-    <div class="card-body bg ">
-      <h4 class="card-title"><%= batch.batch_name %></h4>
+<div class="card-deck"  style="width: 70rem; height:4rem">
+  <div class="row  cn">
+   <% @batches.each do |batch| %>
+   <div class="col-md-4">
+    <p>
+      <div class="card"  >
+        <img src='https://cdn.pixabay.com/photo/2018/08/15/13/10/galaxy-3608029_960_720.jpg' alt="" height="200" >
+        <div class="card-body bg ">
+          <b class="card-title">batch name</b><br>
 
-      <h6 class="card-text">  Faculty Name </h6>
-      <p class="card-text"> <%= batch.faculty.faculty_name %>
-</p>
-<h6 class="card-text"> Batch Starting Time</h6>
-<p class="card-text"> <%= batch.starting_time.strftime("%H:%M") %>
-</p>
-
-<h6 class="card-text">Batch Ending Time
-</h6>
-<p class="card-text"> <%= batch.ending_time.strftime("%H:%M") %>
-</p>
+          <h4 class="card-title"><%= batch.batch_name %></h4>
 
 
+          <b class="card-text"> Batch Starting Time</b>
+          <h5 class="card-text"> <%= batch.starting_time.strftime("%H:%M") %>
+          </h5>
 
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">join us</small>
-    </div>
+          <b class="card-text">Batch Ending Time
+          </b>
+          <h5 class="card-text"> <%= batch.ending_time.strftime("%H:%M") %>
+          </h5>
+          <table class="table-bordered local">
+          
+          <tr class="table-active">
+            <th>faculty name</th>
+            <th>subject <br>faculty teach</th>
+          </tr>
+
+
+          <% batch.batch_faculty_subjects.each do |faculty| %>
+          <tr class="table-active">
+            <td>
+              <%= faculty.faculty.faculty_name %></td>
+              <td>
+             <%= faculty.subject.subject_name%>
+
+            </td>
+          </tr>
+
+
+          <% end %>
+
+          </table>
+
+
+        </div>
+
+        <div class="card-footer">
+          <small class="text-muted">batch details</small>
+        </div>
+      </div>
+    </p>
   </div>
-</p>
-</div>
- <% end %>
+  <% end %>
 </div>
 </div>
 
 <style type="text/css">
   .bg{background: -webkit-linear-gradient(to left, #000066, #000066, #000066);
-          background: linear-gradient(to bottom right, #ccccff 0%, #ffffff 100%);
-        padding: 30px;
-        text-align: left;
-        font-size: 16px;
-        size: 9876px
-       
-        }
-          
-      
+    background: linear-gradient(to bottom right, #ccccff 0%, #ffffff 100%);
+    padding: 20px;
+    text-align: left;
+    font-size: 16px;
+    size: 9876px;
+    font-family: "Times New Roman"; Times, serif;
+font-size: 25px;
+letter-spacing: -0.4px;
+word-spacing: 1.8px;
+color: #000000;
+font-weight: 400;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: capitalize; }
+
+  .local{background: -webkit-linear-gradient(to left, #000066, #000066, #000046);
+    background: linear-gradient(to bottom right, #ccccff 0%, #ffffff 100%);
+font-family: "Times New Roman", Times, serif;
+font-size: 20px;
+letter-spacing: -0.4px;
+word-spacing: 1.8px;
+color: #000000;
+font-weight: 400;
+text-decoration: none;
+font-style: center;
+font-variant: normal;
+text-transform: capitalize;
+text-align: center;
+}
+.cn{position: relative;
+left: 70px;
+bottom:0;}
+
 </style>

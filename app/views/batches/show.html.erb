@@ -1,3 +1,4 @@
+ <p></p>
  <% if admin_signed_in? %>
 
 
@@ -16,7 +17,7 @@
 
                   <tr class="table-active">
                    <th>student No.</th>
-                   <th>Name </th>
+                   <th>Click Name for details </th>
                    <th>Email</th>
                  </tr>
 
@@ -45,57 +46,105 @@
 
   <%else %>
 
+
         <div class="container">
-
-         <p>
-           <strong>Batch No.</strong>
-           <%= @batch.id%>
-         </p>
-         <p>
-           <strong>Batch name</strong>
-           <%= @batch.batch_name %>
-         </p> 
-
-         <p>
-           <strong>Faculty name</strong>
-           <%= @batch.faculty.faculty_name %>
-         </p> 
-
-         <p>
-           <strong>No. of student</strong>
-           <%= @batch.users.ids.count %>
-         </p>
-
-         <p>
-           <strong>batch start timing</strong>
-           <%= @batch.starting_time.strftime("%H:%M") %>
-         </p>
-
-         <p>
-           <strong>batch end timing</strong>
-           <%= @batch.ending_time.strftime("%H:%M") %>
-         </p>
+            <table class="table-bordered cools">               
+                    <tr class="table-active">
+                   <th>Batch Id.</th>
+                   <td><%= @batch.id%></td>
+               </tr>
+                 
+                 <tr class="table-active">
+                   <th>Batch Name</th>
+                  <td> <%= @batch.batch_name %></td>
+                 </tr> 
 
 
-         <% if admin_signed_in? %>
+                  <tr class="table-active">
+                   <th>Batch Start timing</th>
+                   <td><%= @batch.starting_time.strftime("%H:%M") %></td>
+                 </tr>
 
-         <%=  link_to 'Admin back' ,  batches_path %>
+                 <tr class="table-active">
+                   <th>Batch End Timing </th>
+                   <td><%= @batch.ending_time.strftime("%H:%M") %></td>
+                 </tr>
 
-         <% elsif user_signed_in?%>
+               </table>
+           </div>
 
-         <%=  link_to 'User back' ,  student_batch_index_path  %>
-         <% end %>
-        </div> 
+                <div class="container">  
+                    <table class="table table-bordered table-active cool">
+                               <tr  class="table-active">
+                                <th>Faculty name</th>
+                                <th>Faculty's subject name</th>
+                                <th>Action</th>
 
+                            </tr>
+
+                            <% @batch.batch_faculty_subjects.each do |batch_faculty_subject| %>
+                            <tr class="table-active">
+                                   <td>
+                                    <%= batch_faculty_subject.faculty.faculty_name %>
+
+                                </td>
+
+                                <td>
+                                    <%= batch_faculty_subject.subject.subject_name %>
+                                </td>
+
+                                <td>
+                                    <%= link_to 'Destroy', [batch_faculty_subject.batch, batch_faculty_subject],
+                                    method: :delete,
+                                    data: { confirm: 'Are you sure?' } %>
+                                </td>
+                          </tr>
+
+                        <%end%>
+                     </table>
+                </div>
+
+
+                <div class="container">
+                  <div class="adjust">
+                    <%= form_for([@batch, @batch.batch_faculty_subjects.build]) do |f| %>
+                        <strong>select faculty </strong><br>
+                        <%= f.collection_select :faculty_id, Faculty.order(:faculty_name),:id,:faculty_name, include_blank: true %><br>
+                        <strong>select subject</strong><br>
+                        <%= f.collection_select :subject_id, Subject.order(:subject_name),:id,:subject_name, include_blank: true %>
+                          <br>
+                             <%= f.submit "submit for create" %>
+                          
+
+                              </div> 
+
+                              <% end %>
+
+                            </div>
+
+                          </div>
+
+                   <% end %>
+
+<p></p>
+      <div class="container">
+          <% if admin_signed_in? %>
+
+            <%=  link_to 'Admin back' ,  batches_path , class: "btn btn-primary btn-sm btn-active"%>
+
+            <% elsif user_signed_in?%>
+
+            <%=  link_to 'User back' ,  student_batch_index_path , class: "btn btn-primary btn-sm btn-active" %>
     <% end %>
 
+      </div>
 <%end %>
 
 
 <style type="text/css">
   .cool{-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);margin-top: 40px;font-family: Georgia, serif;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.2px;
     word-spacing: 0.4px;
     color: black;
@@ -109,7 +158,20 @@
     .effect{ text-align:center; color: black; font-size: 80px;font-family: cursive; font-style: italic; -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
       box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); margin-top: 50px;
       background: rgba(42,245,212,0.49) url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=355&q=80") repeat scroll 47px -23px; }
-      .table-bordered{text-align: center;}
+
+
+       .cools{ text-align:center; color: black; font-size: 20px;font-family: cursive; font-style: italic; -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); margin-top: 50px;
+      background: rgba(42,245,212,0.49) url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=355&q=80") repeat scroll 47px -23px; word-spacing: 3.4px;    font-weight: 400;
+
+}
+
+
+      .adjust{position: absolute;
+        top: 220px;
+        right: 100px;}
+
+        .table-bordered{text-align: center;}
     </style>
 
 

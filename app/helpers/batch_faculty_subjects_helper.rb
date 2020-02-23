@@ -1,0 +1,2 @@
+module BatchFacultySubjectsHelper
+end

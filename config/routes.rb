@@ -43,9 +43,11 @@ devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions"}
 
     # get '/assets/bootstrap-custom'
  
-
+    resources :subjects
 	resources :faculties
-	resources :batches
+	resources :batches do
+		resources :batch_faculty_subjects
+	end
 
     
 

@@ -15,7 +15,6 @@ class BatchesController < ApplicationController
 	end
 
 	def create
-		byebug
 	  @batch = Batch.new(batch_params)
 	 
 	 if @batch.save
@@ -55,6 +54,6 @@ class BatchesController < ApplicationController
 	 
 	private
 	  def batch_params
-	    params.require(:batch).permit(:batch_name, :starting_time, :ending_time, :faculty_id)
+	    params.require(:batch).permit(:batch_name, :starting_time, :ending_time)
 	  end
 end

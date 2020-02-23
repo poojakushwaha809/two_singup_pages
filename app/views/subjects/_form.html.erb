@@ -1,0 +1,24 @@
+<div class="container">
+
+<%= link_to 'Welcome To Admin Page', admin_new_path %>
+<p></p>
+
+<%= form_for @subject do |f| %>  
+
+
+  <p>
+    <%= f.label :subject_name %><br>
+    <%= f.text_field :subject_name %>
+  </p>
+
+ 
+  
+  <p>
+    <%= f.submit %>
+  </p>
+  
+<% end %>
+
+    <%= link_to 'subjects back', subjects_path %> 
+
+  </div>

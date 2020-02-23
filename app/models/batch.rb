@@ -1,8 +1,8 @@
 class Batch < ApplicationRecord
 
-	belongs_to :faculty
     has_many :users, dependent: :destroy
-
+    has_many :batch_faculty_subjects, dependent: :destroy
+   
 	# def name
 	# 	"laxmi"
 	# end

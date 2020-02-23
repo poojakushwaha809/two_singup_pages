@@ -1,0 +1,13 @@
+    <strong>faculty name</strong>
+    <%= batch_faculty_subject.faculty.faculty_name %>
+  </p>
+ 
+  <p>
+    <strong> faculty subject name</strong>
+    <%= batch_faculty_subject.subject.subject_name %>
+  </p>
+<p>
+  <%= link_to 'Destroy faculty subject', [batch_faculty_subject.batch, batch_faculty_subject],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
