@@ -68,7 +68,7 @@ gem 'devise'
 gem 'carrierwave', '~> 2.0'
 gem 'ransack'
 
-gem 'omniauth'
+# gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-github'

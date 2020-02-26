@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   devise :rememberable, :omniauthable, omniauth_providers: [:google_oauth2]
 
-belongs_to :batch
+# belongs_to :batch
 
   mount_uploader :student_image, UserUploader
 

@@ -31,7 +31,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -59,6 +59,35 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+#   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+#   config.action_mailer.delivery_method = :smtp
+# config.action_mailer.smtp_settings = {
+#   address: "smtp.sendgrid.net",
+#   domain: "smtp.sendgrid.net",
+#   port: 587,
+#   user_name: "vijaymaurya",
+#   password: "vijay133404",
+#   authentication: 'plain',
+#   enable_starttls_auto: true
+# }
+# SMTP_PORT: '25'
+# SMTP_USER: vijaymaurya
+# SMTP_PASS: vijay133404
+# MAIL_FROM: 'vijaywebintimate@gmail.com'
+# SMTP_DOMAIN: 'smtp.sendgrid.net'
+# SMTP_ADDRESS: 'smtp.sendgrid.net'
+ config.action_mailer.default_options = {from: 'testingsharma08@gmail.com'}
+
+  # ========================================================================
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'mail.google.com',
+  user_name:            'testingsharma08@gmail.com',
+  password:             'Aman@123',
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+
 
 end
