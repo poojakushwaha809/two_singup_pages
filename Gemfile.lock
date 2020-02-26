@@ -291,7 +291,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
-  omniauth
   omniauth-facebook
   omniauth-github
   omniauth-google-oauth2
