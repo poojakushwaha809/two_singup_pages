@@ -15,7 +15,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user.password = SecureRandom.urlsafe_base64
         
         @user.save!
-        UserMailer.welcome_email(@user).deliver_now
+        # UserMailer.welcome_email(@user).deliver_now
 
         @user.remember_me = true
         sign_in(:user, @user)
